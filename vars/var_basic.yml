@@ -5,7 +5,7 @@ java_packages:
  - "java-1.8.0-openjdk"
  - "java-1.8.0-openjdk-devel"
 
-download_path: "/home/downloads"
+download_path: "/home/hadoop"
 
 # hadoop basic vars
 hadoop_version: "3.0.0"
@@ -19,7 +19,7 @@ hadoop_log_path: "/home/hadoop/hadoop_logs"
 hadoop_create_path:
   - "{{ hadoop_tmp }}"
   - "{{ hadoop_dfs_name }}"
-  - "{{ hadoop_dfs_data }}"
+  - "{{ hadoop_dfs_data }}" 
   - "{{ hadoop_log_path }}"
 
 
@@ -84,6 +84,10 @@ yarn_resourcemanager_admin_port: 8141
 
 yarn_site_properties:
   - {
+    "name":"yarn.resourcemanager.hostname",
+    "value":"{{ master_hostname }}"
+  }
+  - {
     "name":"yarn.resourcemanager.address",
     "value":"{{ master_hostname }}:{{ yarn_resourcemanager_port }}"
   }
@@ -111,7 +115,7 @@ yarn_site_properties:
     "name": "yarn.nodemanager.aux-services.mapreduce.shuffle.class",
     "value": "org.apache.hadoop.mapred.ShuffleHandler"
   }
-
+  
 dashbord_port: 9870
 firewall_ports:
   - "{{ dashbord_port}}"
@@ -129,8 +133,8 @@ firewall_ports:
 spark:
   version: "2.0.0"
   hadoop_version: "2.7"
-  install_dir: "/home/spark"
-  config_path: "{{ spark.install_dir }}/conf"
+  install_dir: "/home/hadoop"
+  config_path: "{{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}/conf"
 
   working_dir: /tmp/spark/data
   working_dir: /var/lib/spark

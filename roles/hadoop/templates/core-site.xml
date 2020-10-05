@@ -15,7 +15,6 @@
 -->
 
 <!-- Put site-specific property overrides in this file. -->
-
 <configuration>
 {% for item in core_site_properties%}
   <property>

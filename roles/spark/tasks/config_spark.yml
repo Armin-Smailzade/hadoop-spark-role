@@ -11,7 +11,7 @@
   template: src=spark-defaults.conf dest={{ spark.config_path }} mode=644 owner={{ user }} group = {{ group }}
 
 - name: Set slaves
-  template: src="slaves.j2" dest="{{ spark.config_path }}/slaves"
+  template: src="slaves" dest="{{ spark.config_path }}/slaves"
 
 - name: Set spark-env.sh
   template: src="spark-env-sh.j2" dest="{{ spark.config_path }}/spark-env.sh"

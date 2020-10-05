@@ -1,6 +1,7 @@
 
 # Get Master Public Key
 - hosts: master 
+  become: True
   remote_user: root
   vars_files:
    - vars/user.yml
@@ -10,6 +11,7 @@
     - fetch_public_key
 
 - hosts: workers 
+  become: True
   remote_user: root
   vars_files:
    - vars/user.yml
@@ -19,7 +21,7 @@
     add_user: true
     generate_key: false
     open_firewall: false
-    disable_firewall: true
+    disable_firewall: false
     install_hadoop: true
     config_hadoop: true
   roles:
