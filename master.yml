@@ -6,7 +6,6 @@
    - vars/var_basic.yml
    - vars/var_master.yml
   vars:
-     user: "hadoop"
      add_user: true
      generate_key: true
      open_firewall: false
