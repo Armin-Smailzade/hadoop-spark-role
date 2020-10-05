@@ -1,0 +1,24 @@
+---
+# - name: create spark working directory
+#   file:
+#     path: "{{ spark.working_dir }}"
+#     state: directory
+#    owner: "{{ spark.user }}"
+#    group: "{{ spark.user }}"
+#  become: true
+
+- name: Copy spark-defaults.conf
+  template: src=spark-defaults.conf dest={{ spark.config_path }} mode=644 owner={{ user }} group = {{ group }}
+
+- name: Set slaves
+  template: src="slaves.j2" dest="{{ spark.config_path }}/slaves"
+
+- name: Set spark-env.sh
+  template: src="spark-env-sh.j2" dest="{{ spark.config_path }}/spark-env.sh"
+
+- name: Copy spark profile script
+  template: src=spark_profile.sh dest=/etc/profile.d/ mode=755
+
+- name: Set spark env
+  shell: source /etc/profile.d/spark_profile.sh
+
