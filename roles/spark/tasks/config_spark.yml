@@ -1,5 +1,5 @@
 ---
-- name: create spark working directory
+- name: create spark log directory
   file:
     path: "{{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}/logs"
     state: directory
