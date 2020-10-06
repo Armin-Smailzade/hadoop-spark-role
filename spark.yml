@@ -1,6 +1,7 @@
 # do they need keys ? do they have to be installed in all nodes? or just python and java?
 
-- hosts: master # and workers
+- hosts: master,workers # and workers
+  become: True
   remote_user: root
   vars_files:
    - vars/user.yml

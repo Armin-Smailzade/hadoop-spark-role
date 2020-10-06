@@ -72,9 +72,9 @@
 
 
 export HADOOP_HOME={{hadoop_path}}/hadoop-{{hadoop_version}}
-export HADOOP_CONF_DIR={hadoop_config_path}
+export HADOOP_CONF_DIR={{hadoop_config_path}}
 
-export SPARK_HOME={{ install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}
+export SPARK_HOME={{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}
 export PATH=$PATH:$SPARK_HOME/bin
 export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native:$LD_LIBRARY_PATH
 
@@ -87,8 +87,8 @@ SPARK_MASTER_PORT={{ spark.master_port }}
 SPARK_WORKER_PORT={{ spark.worker_work_port }}
 SPARK_WORKER_WEBUI_PORT={{ spark.worker_ui_port }} #Avoid conflict with kafka ports
 
-{% for key, value in spark.env_extras.items() | sort %}
-export {{ key }}="{{ value }}"
-{% endfor %}
+
+
+
 
 

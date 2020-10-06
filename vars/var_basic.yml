@@ -131,15 +131,15 @@ firewall_ports:
 
 # spark basic vars
 spark:
-  version: "2.0.0"
+  version: "2.4.7"
   hadoop_version: "2.7"
   install_dir: "/home/hadoop"
-  config_path: "{{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}/conf"
+  config_path: "/home/hadoop/spark-2.4.7-bin-hadoop2.7/conf"
 
   working_dir: /tmp/spark/data
   working_dir: /var/lib/spark
   #install_dir: /opt/spark
-  
+  master_port: 7077
   master_work_port: 7077 
   worker_work_port: 7078
   master_ui_port: 8080

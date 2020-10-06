@@ -1,24 +1,35 @@
 ---
-# - name: create spark working directory
-#   file:
-#     path: "{{ spark.working_dir }}"
-#     state: directory
-#    owner: "{{ spark.user }}"
-#    group: "{{ spark.user }}"
-#  become: true
+- name: create spark working directory
+  file:
+    path: "{{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}/logs"
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: 0755
+  become: true
 
+- name: create spark working directory   
+  file:     
+    path: "{{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}/work"     
+    state: directory     
+    owner: "{{ user }}"     
+    group: "{{ group }}"     
+    mode: 0755   
+  become: true
+
+    
 - name: Copy spark-defaults.conf
   template: src=spark-defaults.conf dest={{ spark.config_path }} mode=644 owner={{ user }} group = {{ group }}
 
 - name: Set slaves
-  template: src="slaves" dest="{{ spark.config_path }}/slaves"
+  template: src="slaves" dest="{{ spark.config_path }}/slaves" mode=644 owner={{ user }} group = {{ group }}
 
 - name: Set spark-env.sh
-  template: src="spark-env-sh.j2" dest="{{ spark.config_path }}/spark-env.sh"
+  template: src="spark-env.sh" dest="{{ spark.config_path }}/spark-env.sh" mode=644 owner={{ user }} group = {{ group }}
 
 - name: Copy spark profile script
-  template: src=spark_profile.sh dest=/etc/profile.d/ mode=755
+  template: src=spark-profile.sh dest=/etc/profile.d/ mode=755
 
-- name: Set spark env
-  shell: source /etc/profile.d/spark_profile.sh
+- name: Set spark profile
+  shell: source /etc/profile.d/spark-profile.sh
 

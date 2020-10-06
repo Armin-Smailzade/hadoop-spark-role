@@ -11,7 +11,7 @@
 
 
 - include: install_spark.yml
-  when: install_spark
+
 
 - include: config_spark.yml
-  when: config_spark
+
