@@ -1,10 +1,4 @@
 ---
-# java version
-jvm_home: "/usr/lib/jvm"
-java_packages:
- - "java-1.8.0-openjdk"
- - "java-1.8.0-openjdk-devel"
-
 download_path: "/home/ec2-user"
 
 # hadoop basic vars
@@ -126,21 +120,3 @@ firewall_ports:
   - "{{ yarn_resourcemanager_webapp_port }}"
   - "{{ yarn_resourcemanager_tracker_port }}"
   - "{{ yarn_resourcemanager_admin_port }}"
-
-
-
-# spark basic vars
-spark:
-  version: "2.4.7"
-  hadoop_version: "2.7"
-  install_dir: "/home/hadoop"
-  config_path: "/home/hadoop/spark-2.4.7-bin-hadoop2.7/conf"
-
-  working_dir: /tmp/spark/data
-  working_dir: /var/lib/spark
-  #install_dir: /opt/spark
-  master_port: 7077
-  master_work_port: 7077 
-  worker_work_port: 7078
-  master_ui_port: 8080
-  worker_ui_port: 8081

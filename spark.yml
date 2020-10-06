@@ -1,18 +1,40 @@
-# do they need keys ? do they have to be installed in all nodes? or just python and java?
-
-- hosts: master,workers # and workers
+# install spark in master node and generate public key by master
+- hosts: master
   become: True
   remote_user: root
   vars_files:
-   - vars/user.yml
-   - vars/var_basic.yml
+   - vars/var_java.yml
+   - vars/var_hadoop.yml
+   - vars/var_spark.yml
    - vars/var_master.yml
   vars:
-     add_user: false
-     generate_key: false
-     open_firewall: false
-     disable_firewall: false
-     install_hadoop: false
-     config_hadoop: false
+     user: "spark"
+     group: "spark"
+     add_user: true
+     generate_key: true
+     install_spark: true
   roles:
+    - user
+    - fetch_public_key
+    - authorized
+    - spark
+
+# install spark in workers node and fetch public key by master
+- hosts: workers
+  become: True
+  remote_user: root
+  vars_files:
+   - vars/var_java.yml
+   - vars/var_hadoop.yml
+   - vars/var_spark.yml
+   - vars/var_master.yml
+  vars:
+     user: "spark"
+     group: "spark"
+     add_user: true
+     generate_key: false
+     install_spark: true
+  roles:
+    - user
+    - authorized
     - spark

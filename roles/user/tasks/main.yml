@@ -1,6 +1,11 @@
 ---
 - name: Add User 
-  user: name={{ user }} shell=/bin/bash append=yes
+  user: 
+      name={{ user }} 
+      shell=/bin/bash 
+      append=yes
+      # groups="{{ spark.user_groups | join(',') }}"
+      # state=present
   when: add_user
 
 - name: Check Public Key
@@ -15,14 +20,4 @@
     ssh_key_bits: 2048
     ssh_key_file: .ssh/id_rsa
   when: "key_exist.stdout == '0' and generate_key"
-
-
-
-
-#- name: Create service account for Spark
-#  user: name={{ spark.user }}
-#        system=yes
-#        shell={{ spark.user_shell }}
-#        state=present
-#        groups="{{ spark.user_groups | join(',') }}"
 
