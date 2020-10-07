@@ -3,7 +3,7 @@
 spark_version: "2.4.7"
 spark_hadoop_version: "2.7"
 
-spark_install_dir: "/home/{{ user }}"
+spark_install_dir: "/opt/{{ user }}"
 
 spark_config_path: "{{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/conf"
 spark_work_dir: "{{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/work"
