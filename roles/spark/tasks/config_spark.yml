@@ -14,10 +14,10 @@
   template: src=spark-defaults.conf.j2 dest={{ spark_config_path }} mode=644 owner={{ user }} group = {{ group }}
 
 - name: Set slaves
-  template: src="slaves" dest="{{ spark_config_path }}/slaves.j2" mode=644 owner={{ user }} group = {{ group }}
+  template: src="slaves.j2" dest="{{ spark_config_path }}/slaves" mode=644 owner={{ user }} group = {{ group }}
 
 - name: Set spark-env.sh
-  template: src="spark-env.sh" dest="{{ spark_config_path }}/spark-env.sh.j2" mode=644 owner={{ user }} group = {{ group }}
+  template: src="spark-env.sh.j2" dest="{{ spark_config_path }}/spark-env.sh" mode=644 owner={{ user }} group = {{ group }}
 
 - name: Copy spark profile script
   template: src=spark-profile.sh.j2 dest=/etc/profile.d/ mode=755 owner={{ user }} group = {{ group }}
