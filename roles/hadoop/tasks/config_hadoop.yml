@@ -12,7 +12,7 @@
   template: src=yarn-site.xml dest={{ hadoop_config_path }} mode=644 owner={{ user }} group = {{ group }}
 
 - name: Copy Hadoop workers
-  template: src=workers dest={{ hadoop_config_path }} mode=644 owner={{ user }} group = {{ group }}
+  template: src=slaves dest={{ hadoop_config_path }} mode=644 owner={{ user }} group = {{ group }}
 
 - name: Copy Hadoop Env Script
   template: src=hadoop_env.sh dest=/etc/profile.d/ mode=755

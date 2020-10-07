@@ -7,11 +7,11 @@
    - vars/var_hadoop.yml
    - vars/var_master.yml
   vars:
-     add_user: true
-     generate_key: true
+     add_user: false
+     generate_key: false
      open_firewall: false
      disable_firewall: false
-     install_hadoop: true
+     install_hadoop: false
      config_hadoop: true
   roles:
     - user
