@@ -1,5 +1,5 @@
-# install spark in master node and generate public key by master
-- hosts: master
+#install worker nodes and fetch public key by master
+- hosts: workers
   become: True
   remote_user: root
   vars_files:
@@ -15,8 +15,5 @@
      install_spark: false
   roles:
     - user
-    - fetch_public_key
     - authorized
     - spark
-
-
