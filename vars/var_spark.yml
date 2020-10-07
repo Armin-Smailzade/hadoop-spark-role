@@ -12,6 +12,7 @@ spark_logs_dir: "{{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ 
 #install_dir: /opt/spark
 
 spark_create_path:
+  - "{{ spark_install_dir }}"
   - "{{ spark_work_dir }}"
   - "{{ spark_logs_dir }}"
 

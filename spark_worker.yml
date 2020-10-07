@@ -10,9 +10,9 @@
   vars:
      user: "spark"
      group: "spark"
-     add_user: false
+     add_user: true
      generate_key: false
-     install_spark: false
+     install_spark: true
   roles:
     - user
     - authorized

@@ -1,4 +1,15 @@
 ---
+- name: Create spark paths   
+  file:     
+    path: "{{ item }}"     
+    owner: "{{ user }}"     
+    group: "{{ group }}"     
+    state: directory     
+    mode: 0755   
+  
+  with_items:     
+    - "{{ spark_create_path }}" # wo
+
 - include: install_spark.yml
   when: install_spark
   

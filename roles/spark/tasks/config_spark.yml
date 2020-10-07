@@ -1,15 +1,5 @@
 ---
-- name: Create spark paths
-  file: 
-    path: "{{ item }}"
-    owner: "{{ user }}"
-    group: "{{ group }}"
-    state: directory
-    mode: 0755
-  become: true  
-  with_items:
-    - "{{ spark_create_path }}" # work & logs
-    
+  
 - name: Copy spark-defaults.conf
   template: src=spark-defaults.conf.j2 dest={{ spark_config_path }}/spark-defaults.conf mode=644 owner={{ user }} group = {{ group }}
 

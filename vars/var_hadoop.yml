@@ -3,9 +3,9 @@ download_path: "/home/ec2-user"
 
 # hadoop basic vars
 hadoop_version: "2.7.2"
-hadoop_install_path: "/opt/{{ user }}"
+hadoop_install_path: "/opt/hadoop"
 hadoop_config_path: "{{ hadoop_install_path }}/hadoop-{{hadoop_version}}/etc/hadoop"
-hadoop_tmp: "{{ hadoop_install_path }}/hadoop/tmp"
+hadoop_tmp: "{{ hadoop_install_path }}/tmp"
 hadoop_dfs_name: "{{ hadoop_install_path }}/dfs/name"
 hadoop_dfs_data: "{{ hadoop_install_path }}/dfs/data"
 hadoop_log_path: "{{ hadoop_install_path }}/hadoop_logs"
