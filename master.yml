@@ -3,8 +3,12 @@
   remote_user: root
   vars_files:
    - vars/user.yml
+<<<<<<< HEAD
    - vars/var_java.yml
    - vars/var_hadoop.yml
+=======
+   - vars/var_basic.yml
+>>>>>>> parent of 4dfef07... add user for spark
    - vars/var_master.yml
   vars:
      add_user: true
