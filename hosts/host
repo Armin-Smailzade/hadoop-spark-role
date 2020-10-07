@@ -1,13 +1,13 @@
 [master]
-172.31.230.30
+172.31.7.121
 
 [master:vars]
 ansible_user=ec2-user
 ansible_ssh_private_key_file=~/.ssh/H2O.pem
 
 [workers]
-172.31.3.205
-172.31.182.241
+172.31.76.106
+172.31.129.219
 
 [workers:vars]
 ansible_user=ec2-user
