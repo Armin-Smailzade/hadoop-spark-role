@@ -5,7 +5,7 @@
   register: result
 
 - debug:
-    var: result
+    msg: "Hello msg"
     verbosity: 2
     
     
