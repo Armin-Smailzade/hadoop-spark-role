@@ -1,6 +1,7 @@
 ---
 
-- shell: "echo $HADOOP_HOME"
+- name: Get name
+  shell: "$HADOOP_HOME"
   register: result
 
 - debug:
