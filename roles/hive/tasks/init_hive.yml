@@ -6,7 +6,6 @@
 
 - debug:
     msg: "Hello msg"
-    verbosity: 2
     
     
 # - name: Init hdfs path
