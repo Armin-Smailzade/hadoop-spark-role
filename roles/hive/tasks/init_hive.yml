@@ -1,7 +1,16 @@
 ---
-- name: Init hdfs path
-  become_user: hadoop
-  shell: "/opt/hadoop/hadoop-2.7.2/bin/hdfs dfs -ls /"
+
+- shell: "echo $HADOOP_HOME"
+  register: result
+
+- debug:
+    var: result
+    verbosity: 2
+    
+    
+# - name: Init hdfs path
+#   become_user: hadoop
+#   shell: "/opt/hadoop/hadoop-2.7.2/bin/hdfs dfs -ls /"
 #   shell: su {{ user }} -c "hdfs dfs -mkdir -p {{ item }}"
 #   with_items:
 #     - "{{ hive_hdfs_path }}"
