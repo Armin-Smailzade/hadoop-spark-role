@@ -5,7 +5,7 @@
   register: result
 
 - debug:
-    msg: "Hello msg"
+    var: result
     
     
 # - name: Init hdfs path
