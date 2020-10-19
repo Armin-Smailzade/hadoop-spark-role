@@ -1,7 +1,7 @@
 ---
 - name: Init hdfs path
   become_user: hadoop
-  shell: "hdfs dfs -ls /"
+  shell: "java -help"
 #   shell: su {{ user }} -c "hdfs dfs -mkdir -p {{ item }}"
 #   with_items:
 #     - "{{ hive_hdfs_path }}"
