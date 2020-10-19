@@ -1,12 +1,4 @@
 ---
-- name: Set Hadoop Env
-  become_user: hadoop
-  shell: source /etc/profile.d/hadoop_env.sh
-  
-- name: Set Hive Env
-  become_user: hadoop
-  shell: source /etc/profile.d/hive_env.sh
-  
 - name: Init hdfs path
   become_user: hadoop
   shell: "/opt/hadoop/hadoop-2.7.2/bin/hdfs dfs -ls /"
