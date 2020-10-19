@@ -5,5 +5,10 @@
 - name: Copy Hive Env Script
   template: src=hive_env.sh dest=/etc/profile.d/ mode=755
 
+- name: Set Hadoop Env
+  become_user: hadoop
+  shell: source /etc/profile.d/hadoop_env.sh
+  
 - name: Set Hive Env
+  become_user: hadoop
   shell: source /etc/profile.d/hive_env.sh
