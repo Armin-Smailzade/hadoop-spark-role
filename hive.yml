@@ -10,7 +10,7 @@
   vars:
      open_firewall: false
      install_hive: false
-     config_hive: false
+     config_hive: true
      init_hive: true
   roles:
     - hive
