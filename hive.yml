@@ -9,8 +9,8 @@
    - vars/var_hive.yml
   vars:
      open_firewall: false
-     install_hive: true
-     config_hive: true
+     install_hive: false
+     config_hive: false
      init_hive: true
   roles:
     - hive
