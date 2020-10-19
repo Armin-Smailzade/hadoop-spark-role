@@ -1,6 +1,6 @@
 ---
 - name: Init hdfs path
-  shell: su {{ user }} -c "/opt/hadoop/hadoop-2.7.2/bin/hdfs dfs -ls /"
+  shell: su {{ user }} -c "hdfs dfs -ls /"
 #   shell: su {{ user }} -c "hdfs dfs -mkdir -p {{ item }}"
 #   with_items:
 #     - "{{ hive_hdfs_path }}"
