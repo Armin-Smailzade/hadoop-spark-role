@@ -1,7 +1,7 @@
 ---
 
 - name: Get name
-  shell: "$HADOOP_HOME"
+  shell: "env"
   register: result
 
 - debug:
