@@ -110,6 +110,14 @@ yarn_site_properties:
     "name": "yarn.nodemanager.aux-services.mapreduce.shuffle.class",
     "value": "org.apache.hadoop.mapred.ShuffleHandler"
   }
+  - {
+    "name": "yarn.log-aggregation-enable",
+    "value": "true"
+    }
+  - {
+    "name": "yarn.nodemanager.remote-app-log-dir",
+    "value": "/tmp/logs"
+    }
   
 dashbord_port: 9870
 firewall_ports:
