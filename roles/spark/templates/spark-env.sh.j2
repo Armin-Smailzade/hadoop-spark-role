@@ -27,7 +27,7 @@ export HADOOP_CONF_DIR={{hadoop_config_path}}
 export SPARK_HOME={{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}
 export PATH=$PATH:$SPARK_HOME/bin
 export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native:$LD_LIBRARY_PATH
-
+export PYSPARK_PYTHON=python3
 
 export JAVA_TOOL_OPTS=-Djava.net.preferIPv4Stack=true
 
