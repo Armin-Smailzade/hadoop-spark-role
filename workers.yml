@@ -18,7 +18,7 @@
    - vars/user.yml
    - vars/var_java.yml
    - vars/var_hadoop.yml
-   - vars/var_workers.yml
+   - vars/var_master.yml
   vars:
     add_user: true
     generate_key: false
