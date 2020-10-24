@@ -1,0 +1,5 @@
+postgresql_databases:
+  - name: hive
+postgresql_users:
+  - name: hive_user
+    password: 1
