@@ -1,6 +1,6 @@
-- hosts: database
+- hosts: postgres
   become: yes
   vars_files:
-    - vars/main.yml
+    - vars/vars_postgres.yml
   roles:
     - postgresql

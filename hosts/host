@@ -19,3 +19,6 @@ ansible_ssh_private_key_file=~/.ssh/H2O.pem
 
 [hive]
 172.31.116.62
+
+[postgres]
+172.31.53.77
