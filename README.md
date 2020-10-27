@@ -48,13 +48,13 @@ run shell like:
 ansible-playbook -i hosts/host spark_workers.yml
 ```
 
-### Install hive
+### Install Postgres DB 
 run shell like:
 ```
 ansible-playbook -i hosts/host postgres.yml
 ```
 
-### Install hive
+### Install Hive
 1. **Create postgres database first and give right authority**
 2. check vars/var_hive.yml
 ```
