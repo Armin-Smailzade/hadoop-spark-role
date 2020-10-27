@@ -136,24 +136,6 @@ firewall_ports:
 ```
 
 3. check hive.yml
-
-```
-- hosts: hive                   # in hosts/host
-  remote_user: root
-  vars_files:
-   - vars/user.yml
-   - vars/var_basic.yml
-   - vars/var_master.yml
-   - vars/var_hive.yml            # var_hive.yml
-  vars:
-     open_firewall: true           
-     install_hive: true           
-     config_hive: true
-     init_hive: true               # init hive database after install and config
-  roles:
-    - hive
-
-```
 4. run it
 
 ```
