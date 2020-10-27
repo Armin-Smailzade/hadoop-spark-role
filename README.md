@@ -1,12 +1,13 @@
-# Hadoop-ansible
-- Install Hadoop cluster with ansible
-- JDK is  Openjdk-1.8
-- Hadoop version 2.7.2
-- Spark version 2.4.7
-- Hive is the version 2.3.7
+# Hadoop-spark-ansible
+- Install Hadoop cluster with ansible.
+- JDK is  Openjdk-1.8.
+- Hadoop version 2.7.2.
+- Spark version 2.4.7.
+- Hive is the version 2.3.7.
+- Postgres database.
 
 ## Before Install
-Update /hosts/host fil.
+Update /hosts/host file.
 
 ## Install Hadoop
 1. Download Hadoop to any path
