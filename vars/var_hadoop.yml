@@ -9,6 +9,7 @@ hadoop_tmp: "{{ hadoop_install_path }}/tmp"
 hadoop_dfs_name: "{{ hadoop_install_path }}/dfs/name"
 hadoop_dfs_data: "{{ hadoop_install_path }}/dfs/data"
 hadoop_log_path: "{{ hadoop_install_path }}/hadoop_logs"
+hadoop_pid_path: "{{ hadoop_install_path }}/pid"
 
 hadoop_create_path:
   - "{{ hadoop_install_path }}"
@@ -16,7 +17,7 @@ hadoop_create_path:
   - "{{ hadoop_dfs_name }}"
   - "{{ hadoop_dfs_data }}" 
   - "{{ hadoop_log_path }}"
-
+  - "{{ hadoop_pid_path }}"
 
 # hadoop configration 
 hdfs_port: 9000

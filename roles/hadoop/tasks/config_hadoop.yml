@@ -19,3 +19,15 @@
 
 - name: Set Hadoop Env
   shell: source /etc/profile.d/hadoop_env.sh
+
+- name: Copy Mapred Env Script
+  template: src=mapred_env.sh dest=/etc/profile.d/ mode=755
+
+- name: Set Mapred Env
+  shell: source /etc/profile.d/mapred_env.sh
+
+- name: Copy Yarn Env Script
+  template: src=yarn_env.sh dest=/etc/profile.d/ mode=755
+
+- name: Set Yarn Env
+  shell: source /etc/profile.d/yarn_env.sh
