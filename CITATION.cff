@@ -1,1 +1,8 @@
-
+@misc{Test,
+  author = {Test, P.W.D.},
+  title = {Project Title},
+  year = {2021},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  commit = {4f57d6a0e4c030202a07a60bc1bb1ed1544bf679}
+}
